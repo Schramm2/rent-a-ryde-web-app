@@ -233,15 +233,15 @@ const validateAge = () => {
 
 // Phone number validation (accepts local SA format and converts to international)
 const validatePhoneNumber = () => {
-  // Accepts 10 digits starting with 0 (e.g., 0824153046)
+  // Accepts 10 digits starting with 0 (e.g., 0821234567)
   const localPattern = /^0\d{9}$/
-  // Accepts already formatted international numbers (e.g., +27824153046)
+  // Accepts already formatted international numbers (e.g., +27821234567)
   const intlPattern = /^\+27\d{9}$/
   if (!phoneNumber.value.trim()) {
     phoneNumberError.value = 'Phone number is required'
     return false
   } else if (!localPattern.test(phoneNumber.value.replace(/\s+/g, '')) && !intlPattern.test(phoneNumber.value.replace(/\s+/g, ''))) {
-    phoneNumberError.value = 'Enter a valid phone number (e.g. 0824153046)'
+    phoneNumberError.value = 'Enter a valid phone number (e.g. 0821234567)'
     return false
   }
   phoneNumberError.value = ''
